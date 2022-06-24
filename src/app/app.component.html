@@ -1,1 +1,12 @@
-<h1>ToDO</h1>
+<input
+  class="new-todo"
+  placeholder="What needs to be done?"
+  autoFocus
+  [value]="text"
+  (keyup)="changeText($event)"
+  (keyup.enter)="addTodo()"
+/>
+
+<ng-container *ngFor="let todo of todos">
+  <p>{{ todo }}</p>
+</ng-container>
