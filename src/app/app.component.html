@@ -8,5 +8,7 @@
 />
 
 <ng-container *ngFor="let todo of todos">
-  <p>{{ todo }}</p>
+  <div>
+    {{ todo.text }} <button (click)="deleteTodo(todo.id)">Delete</button>
+  </div>
 </ng-container>

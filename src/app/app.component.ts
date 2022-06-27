@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   text: string = '';
-  todos: string[] = [];
+  id: number = 1;
+  todos: any = [];
   constructor() {}
 
   changeText(e: Event): void {
@@ -16,7 +17,13 @@ export class AppComponent {
   }
 
   addTodo(): void {
-    this.todos.push(this.text);
+    const todo = { id: this.id, text: this.text };
+    this.todos.push(todo);
     this.text = '';
+    this.id++;
+  }
+
+  deleteTodo(id: number) {
+    this.todos = this.todos.filter((el: any) => el.id !== id);
   }
 }
