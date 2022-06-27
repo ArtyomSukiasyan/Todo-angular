@@ -1,15 +1,17 @@
-<input
-  class="new-todo"
-  placeholder="What needs to be done?"
-  autoFocus
-  [value]="text"
-  (keyup)="changeText($event)"
-  (keyup.enter)="addTodo()"
-/>
-<button (click)="addTodo()">Add ToDo</button>
+<div class="container">
+  <input
+    class="new-todo"
+    placeholder="What needs to be done?"
+    autofocus
+    [value]="text"
+    (keyup)="changeText($event)"
+    (keyup.enter)="addTodo()"
+  />
+  <button (click)="addTodo()">Add ToDo</button>
 
-<ng-container *ngFor="let todo of todos">
-  <div>
-    {{ todo.text }} <button (click)="deleteTodo(todo.id)">Delete</button>
-  </div>
-</ng-container>
+  <ng-container *ngFor="let todo of todos">
+    <div>
+      {{ todo.text }} <button (click)="deleteTodo(todo.id)">Delete</button>
+    </div>
+  </ng-container>
+</div>
