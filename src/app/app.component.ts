@@ -10,8 +10,9 @@ export class AppComponent {
   todos: string[] = [];
   constructor() {}
 
-  changeText(e: any): void {
-    this.text = e.target.value;
+  changeText(e: Event): void {
+    const event = e.target as HTMLInputElement;
+    this.text = event.value;
   }
 
   addTodo(): void {
