@@ -6,6 +6,7 @@
   (keyup)="changeText($event)"
   (keyup.enter)="addTodo()"
 />
+<button (click)="addTodo()">Add ToDo</button>
 
 <ng-container *ngFor="let todo of todos">
   <div>
