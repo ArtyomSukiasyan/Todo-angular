@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IToDo } from './models/Todo';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  text: string = '';
   id: number = 1;
-  todos: any = [];
+  text: string = '';
+  todos: IToDo[] = [];
   constructor() {}
 
   changeText(e: Event): void {
@@ -17,13 +18,13 @@ export class AppComponent {
   }
 
   addTodo(): void {
-    const todo = { id: this.id, text: this.text };
+    const todo: IToDo = { id: this.id, text: this.text };
     this.todos.push(todo);
     this.text = '';
     this.id++;
   }
 
-  deleteTodo(id: number) {
-    this.todos = this.todos.filter((el: any) => el.id !== id);
+  deleteTodo(id: number): void {
+    this.todos = this.todos.filter((el: IToDo) => el.id !== id);
   }
 }
