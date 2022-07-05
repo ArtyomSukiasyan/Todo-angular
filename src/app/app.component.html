@@ -9,7 +9,7 @@
   />
   <button (click)="addTodo()">Add ToDo</button>
 
-  <h2>ToDos</h2>
+  <h2>Todos</h2>
   <ng-container *ngFor="let todo of todos">
     <div>
       <span (click)="completeTodo(todo.id, todo.text)"> {{ todo.text }}</span>
