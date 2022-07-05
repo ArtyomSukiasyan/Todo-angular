@@ -1,5 +1,3 @@
-Project in progress...
-
 # Description
 Simple ToDo list with Angular.
 
