@@ -7,13 +7,14 @@
     (keyup)="changeText($event)"
     (keyup.enter)="addTodo()"
   />
+  <button (click)="addEditedTodo()">Edit Todo</button>
   <button (click)="addTodo()">Add ToDo</button>
 
   <h2>Todos</h2>
   <ng-container *ngFor="let todo of todos">
     <div>
       <span (click)="completeTodo(todo.id, todo.text)"> {{ todo.text }}</span>
-      <button>Edit</button>
+      <button (click)="editTodo(todo.id, todo.text)">Edit</button>
       <button (click)="deleteTodo(todo.id)">Delete</button>
     </div>
   </ng-container>
