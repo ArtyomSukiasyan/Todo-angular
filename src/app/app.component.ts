@@ -10,6 +10,7 @@ export class AppComponent {
   id: number = 1;
   text: string = '';
   todos: IToDo[] = [];
+  completedTodos: IToDo[] = [];
   constructor() {}
 
   changeText(e: Event): void {
@@ -22,6 +23,12 @@ export class AppComponent {
     this.todos.push(todo);
     this.text = '';
     this.id++;
+  }
+
+  completeTodo(id: number, text: string): void {
+    const todo: IToDo = { id, text };
+    this.completedTodos.push(todo);
+    this.deleteTodo(id);
   }
 
   deleteTodo(id: number): void {

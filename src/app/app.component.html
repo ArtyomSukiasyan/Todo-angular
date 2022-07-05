@@ -9,9 +9,17 @@
   />
   <button (click)="addTodo()">Add ToDo</button>
 
+  <h2>ToDos</h2>
   <ng-container *ngFor="let todo of todos">
-    <div>
+    <div (click)="completeTodo(todo.id, todo.text)">
       {{ todo.text }} <button (click)="deleteTodo(todo.id)">Delete</button>
+    </div>
+  </ng-container>
+
+  <h2>Completed Todos</h2>
+  <ng-container *ngFor="let completeTodo of completedTodos">
+    <div class="completedTodos">
+      {{ completeTodo.text }}
     </div>
   </ng-container>
 </div>
